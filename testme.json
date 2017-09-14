@@ -1,7 +1,13 @@
 // 20170914105820
 // http://dev.api.castfire.com/rest/json/?api_key=65734-61534-25052&method=aspects.getList&network_id=592&api_sig=6ce67bb91eed9b8d35a726f5cfbac6ba
-
 {
+  "swagger": "2.0",
+  "info": {
+    "title": "Simple API overview",
+    "version": "v2"
+  },
+  "paths": {
+
   "?method=aspects.getList": {
     "get": {
       "operationId": "aspects.getList",
@@ -46,4 +52,6 @@
       }
     }
   }
+}
+}
 }
