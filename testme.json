@@ -1,0 +1,49 @@
+// 20170914105820
+// http://dev.api.castfire.com/rest/json/?api_key=65734-61534-25052&method=aspects.getList&network_id=592&api_sig=6ce67bb91eed9b8d35a726f5cfbac6ba
+
+{
+  "?method=aspects.getList": {
+    "get": {
+      "operationId": "aspects.getList",
+      "summary": null,
+      "produces": [
+        "application/json",
+        "text/xml"
+      ],
+      "parameters": [
+        {
+          "name": "network_id",
+          "in": "query",
+          "description": "A network id.",
+          "type": "text",
+          "required": false
+        },
+        {
+          "name": "assigned",
+          "in": "query",
+          "description": "Only show aspect ratios that have been assigned to the network. Defaults to assigned=true. Pass assigned=false to get a list of aspect ratios that can be assigned to the network. Or assigned=both to get a full list of aspect ratios.",
+          "type": "text",
+          "required": false
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "Successful",
+          "example": [
+            
+          ]
+        },
+        "500": {
+          "description": "Error",
+          "example": {
+            "status": "fail",
+            "error": {
+              "code": 608,
+              "message": "Invalid signature"
+            }
+          }
+        }
+      }
+    }
+  }
+}
