@@ -1,0 +1,91 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Simple API overview",
+    "version": "v2"
+  },
+  "paths": {
+  "?method=aspects.getList": {
+    "get": {
+      "operationId": "aspects.getList",
+      "summary": "Return a list of aspect ratios.",
+      "produces": [
+        "application/json",
+        "text/xml"
+      ],
+      "parameters": [
+        {
+          "name": "network_id",
+          "in": "query",
+          "description": "A network id.",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "assigned",
+          "in": "query",
+          "description": "Only show aspect ratios that have been assigned to the network. Defaults to assigned=true. Pass assigned=false to get a list of aspect ratios that can be assigned to the network. Or assigned=both to get a full list of aspect ratios.",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "Successful",
+          "example": {
+            "aspects": {
+              "count": 3,
+              "aspect": [
+                {
+                  "id": {
+                    "_content": "8"
+                  },
+                  "name": {
+                    "_content": "Automatic"
+                  },
+                  "ratio": {
+                    "_content": "0.0000"
+                  },
+                  "assigned": {
+                    "_content": 1
+                  },
+                  "examples": {
+                    "_content": "Matches the aspect ratio of the original to the closest assigned aspect ratio"
+                  }
+                },
+                {
+                  "id": {
+                    "_content": "1"
+                  },
+                  "name": {
+                    "_content": "4:3"
+                  },
+                  "ratio": {
+                    "_content": "1.3333"
+                  },
+                  "assigned": {
+                    "_content": 1
+                  },
+                  "examples": {
+                    "_content": "40x480, 480x360, 320x240"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "500": {
+          "description": "Error",
+          "example": {
+            "status": "fail",
+            "error": {
+              "code": 608,
+              "message": "Invalid signature"
+            }
+          }
+        }
+      }
+    }
+  }
+}
+}
